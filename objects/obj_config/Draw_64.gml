@@ -1,0 +1,11 @@
+draw_set_valign(fa_middle)
+draw_rectangle(16,16,16+16,16+16,true)
+draw_sprite(global.downscroll ? spr_checkmark : spr_cross,0,16,16)
+draw_text(16+16+8,16+8,"Downscroll")
+draw_rectangle(16,16+32,16+16,16+16+32,true)
+draw_sprite(global.right_side ? spr_checkmark : spr_cross,0,16,16+32)
+draw_text(16+16+8,16+8+32,"Right side")
+
+draw_rectangle(16,480-32-8,16+16,480-32+8,true)
+draw_text(16+16+8,480-32,"Start")
+draw_set_valign(fa_top)
