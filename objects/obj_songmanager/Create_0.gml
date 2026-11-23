@@ -6,7 +6,8 @@ arrow_colors = [
 ]
 
 pixels_per_second = 64*3
-
+hp = 50
+visual_hp = 50
 if (global.right_side) {
 	enemy = instance_create_depth(640/4,240,0,obj_singer,{right_side:false,sprite_set:global.sprite_sets.enemy})
 	player = instance_create_depth(640*3/4,240,0,obj_singer,{right_side:true,image_xscale:-1,sprite_set:global.sprite_sets.player})

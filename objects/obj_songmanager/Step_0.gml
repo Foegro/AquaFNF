@@ -1,3 +1,4 @@
+visual_hp = lerp(visual_hp,hp,0.1)
 for (var i = 0; i < array_length(arrows); i++) {
 	var arrow = arrows[i]
 	arrow.distance -= delta_time/1000000
@@ -25,10 +26,14 @@ for (var i = 0; i < array_length(arrows); i++) {
 					break
 			}
 			if (hit) {
+				hp += 5
 				array_delete(arrows,i,1)
 				player.move(arrow.dir)
 				i--
 			}
+		} else if (arrow.distance < -0.1 && !(arrow[$"missed"] ?? false)) {
+			arrow.missed = true
+			hp -= 10
 		}
 	}
 }
