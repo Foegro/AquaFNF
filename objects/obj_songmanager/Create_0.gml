@@ -77,6 +77,7 @@ arrows = [
 	{
 		side: sides.player,
 		dir: dirs.right,
-		distance: 12
+		distance: 12,
+		length: 1,
 	},
 ]

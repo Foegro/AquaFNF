@@ -12,7 +12,7 @@ draw_set_colour(c_white)
 draw_set_font(fnt_main)
 draw_set_halign(fa_middle)
 draw_set_valign(fa_bottom)
-draw_text((640/3+48+4+43+20+640*2/3-8)/2,yy,$"{hp}/100")
+draw_text((640/3+48+4+43+20+640*2/3-8)/2,yy,$"{round(hp)}/100")
 draw_set_halign(fa_left)
 draw_text(32,yy-8,$"Score: {round(current_score)}")
 draw_text(32,yy+8,$"Combo: {round(combo)}")
@@ -52,6 +52,11 @@ for (var i = 0; i < array_length(arrows); i++) {
 				angle = 0
 				break
 		}
-		draw_sprite_ext(spr_arrow,0,(arrow.side == sides.player ^^ global.right_side) ? (640/4-32-64+64*arrow.dir) : (640*3/4-32-64+64*arrow.dir),yy-(global.downscroll*2-1)*arrow.distance*pixels_per_second,1,1,angle,arrow_colors[arrow.dir],1)
+		var col = (arrow[$"missed"] ?? false) ? make_colour_rgb(colour_get_red(arrow_colors[arrow.dir])/2,colour_get_green(arrow_colors[arrow.dir])/2,colour_get_blue(arrow_colors[arrow.dir])/2) : arrow_colors[arrow.dir]
+		if !(arrow[$"hit"] ?? false) draw_sprite_ext(spr_arrow,0,(arrow.side == sides.player ^^ global.right_side) ? (640/4-32-64+64*arrow.dir) : (640*3/4-32-64+64*arrow.dir),yy-(global.downscroll*2-1)*arrow.distance*pixels_per_second,1,1,angle,col,1)
+		if (struct_exists(arrow,"length")) {
+			if !(arrow[$"hit"] ?? false) draw_sprite_ext(spr_arrow_trail,0,(arrow.side == sides.player ^^ global.right_side) ? (640/4-32-64+64*arrow.dir) : (640*3/4-32-64+64*arrow.dir),yy-(global.downscroll*2-1)*arrow.distance*pixels_per_second,1,arrow.length*pixels_per_second/32,angle,col,1)
+			else draw_sprite_ext(spr_arrow_trail,0,(arrow.side == sides.player ^^ global.right_side) ? (640/4-32-64+64*arrow.dir) : (640*3/4-32-64+64*arrow.dir),yy,1,(arrow.length+clamp(arrow.distance,-arrow.length,0))*pixels_per_second/32,angle,col,1)
+		}
 	}
 }
