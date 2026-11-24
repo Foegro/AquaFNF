@@ -13,8 +13,12 @@ draw_set_font(fnt_main)
 draw_set_halign(fa_middle)
 draw_set_valign(fa_bottom)
 draw_text((640/3+48+4+43+20+640*2/3-8)/2,yy,$"{hp}/100")
-draw_set_font(-1)
 draw_set_halign(fa_left)
+draw_text(32,yy-8,$"Score: {round(current_score)}")
+draw_text(32,yy+8,$"Combo: {round(combo)}")
+draw_text(640*2/3+32,yy-8,$"Accuracy: {string_format(accuracy()*100,3,2)}%")
+draw_text(640*2/3+32,yy+8,$"Misses: {misses}")
+draw_set_font(-1)
 draw_set_valign(fa_top)
 
 

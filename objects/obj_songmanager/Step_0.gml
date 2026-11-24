@@ -26,6 +26,9 @@ for (var i = 0; i < array_length(arrows); i++) {
 					break
 			}
 			if (hit) {
+				current_score += lerp(0,500+combo*10,abs(arrow.distance*arrow.distance)*100)
+				array_push(hits,0.5+abs(arrow.distance)*5)
+				combo++
 				hp += 5
 				array_delete(arrows,i,1)
 				player.move(arrow.dir)
@@ -34,6 +37,9 @@ for (var i = 0; i < array_length(arrows); i++) {
 		} else if (arrow.distance < -0.1 && !(arrow[$"missed"] ?? false)) {
 			arrow.missed = true
 			hp -= 10
+			combo = 0
+			misses++
+			array_push(hits,0)
 		}
 	}
 }
