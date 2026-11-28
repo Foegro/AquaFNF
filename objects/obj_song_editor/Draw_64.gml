@@ -13,6 +13,20 @@ if (note_editor) {
 	draw_sprite_ext(spr_arrow_goal,0,640*3/4-32,yy,1,1,270,c_white,1)
 	draw_sprite_ext(spr_arrow_goal,0,640*3/4+32,yy,1,1,90,c_white,1)
 	draw_sprite_ext(spr_arrow_goal,0,640*3/4+32+64,yy,1,1,0,c_white,1)
+	
+	draw_sprite_ext(spr_arrow,0,320,480/2-64-32,0.5,0.5,0,c_white,0.25+0.75*(note_mode == note_modes.place))
+	draw_set_alpha(0.25+0.75*(note_mode == note_modes.place))
+	draw_rectangle(320-24,480/2-64-32-24,320+24,480/2-64-32+24,true)
+	
+	draw_sprite_ext(spr_arrow_trail,0,320,480/2-64+32-16,1,1,0,c_white,0.25+0.75*(note_mode == note_modes.extend))
+	draw_set_alpha(0.25+0.75*(note_mode == note_modes.extend))
+	draw_rectangle(320-24,480/2-64+32-24,320+24,480/2-64+32+24,true)
+	
+	draw_set_alpha(1)
+	
+	draw_sprite_ext(playing ? spr_pause : spr_play,0,320,480/2+32,0.5,0.5,0,c_white,1)
+	draw_rectangle(320-24,480/2+32-24,320+24,480/2+32+24,true)
+	
 	var plr_surf = surface_create(64*4,480-96)
 	surface_set_target(plr_surf)
 	draw_line(1,0,0,480-96)

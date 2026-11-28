@@ -1,5 +1,14 @@
 scroll = 0
 scroll_goal = 0
+playing = false
+song = noone
+player_voice = noone
+enemy_voice = noone
+enum note_modes {
+	place,
+	extend
+}
+note_mode = note_modes.place
 
 song_edit_id = ""
 player_voice_edit_id = ""

@@ -31,7 +31,6 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"song_template.json","CopyToMask":-1,"filePath":"datafiles","name":"song_template.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"test.json","CopyToMask":-1,"filePath":"datafiles/Songs","name":"test.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -64,6 +63,8 @@
     {"id":{"name":"spr_enemy_right","path":"sprites/spr_enemy_right/spr_enemy_right.yy",},},
     {"id":{"name":"spr_enemy_up","path":"sprites/spr_enemy_up/spr_enemy_up.yy",},},
     {"id":{"name":"spr_hpname","path":"sprites/spr_hpname/spr_hpname.yy",},},
+    {"id":{"name":"spr_pause","path":"sprites/spr_pause/spr_pause.yy",},},
+    {"id":{"name":"spr_play","path":"sprites/spr_play/spr_play.yy",},},
     {"id":{"name":"spr_player_down","path":"sprites/spr_player_down/spr_player_down.yy",},},
     {"id":{"name":"spr_player_head","path":"sprites/spr_player_head/spr_player_head.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},

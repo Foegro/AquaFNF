@@ -36,6 +36,8 @@
     {"name":"spr_enemy_right","order":3,"path":"sprites/spr_enemy_right/spr_enemy_right.yy",},
     {"name":"spr_enemy_up","order":4,"path":"sprites/spr_enemy_up/spr_enemy_up.yy",},
     {"name":"spr_hpname","order":8,"path":"sprites/spr_hpname/spr_hpname.yy",},
+    {"name":"spr_pause","order":11,"path":"sprites/spr_pause/spr_pause.yy",},
+    {"name":"spr_play","order":10,"path":"sprites/spr_play/spr_play.yy",},
     {"name":"spr_player_down","order":3,"path":"sprites/spr_player_down/spr_player_down.yy",},
     {"name":"spr_player_head","order":6,"path":"sprites/spr_player_head/spr_player_head.yy",},
     {"name":"spr_player_left","order":4,"path":"sprites/spr_player_left/spr_player_left.yy",},
